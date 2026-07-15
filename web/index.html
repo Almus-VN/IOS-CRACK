@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPAStore - Kho Ứng Dụng IOS IPA Miễn Phí</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwind.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            color: {
+              apple: {
+                blue: '#0071e3',
+                gray: '#1d1d1f',
+                lightGray: '#f5f5f7',
+                darkBg: '#090a0f',
+                cardDark: '#161824'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.con/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      body {
+        font-family: 'Inter' sans-serif;
+        scroll-behavior: smooth;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #161824;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #374151;
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4B5563;
+      }
+    </style>
+  </head>
+  <body class="bg-apple-lightGray dark:bg-apple-darkBg text-slate-800 dark:text-slate-100 min-h-screen transition-color duration-300">
+
+    <!-- HEADER & NAVBAR -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-white/800 dark:bg-apple-darkBg/80 border-b border-slate-200 dark:border-slate-800/80 transition-color duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center shadow-blue-500/20">
+          <i class="fab fa-apple text-white text-xl"></i>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold bg-clip-text text-transparent bg-gradent-to-r from-blue-500 via-indigo-500 to-purple-600 tracking-tight">iPAStore</span>
+          <span class="hidden sm:inline-block ml-1 text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 font-medium">v2.5.0</span>
+        </div>
+      </div>
+
+    <!-- Navigation Desktop -->
+     <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+                    <a href="#store" class="text-apple-blue hover:text-blue-600 transition">Kho Ứng Dụng</a>
+                    <a href="#guides" class="hover:text-apple-blue dark:hover:text-blue-400 transition">Hướng Dẫn Cài</a>
+                    <a href="#submit" class="hover:text-apple-blue dark:hover:text-blue-400 transition">Yêu Cầu App</a>
+                </nav>
+
+                <!-- Action Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800/60 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-800 transition text-slate-600 dark:text-slate-300">
+                        <i id="themeIcon" class="fas fa-moon text-lg"></i>
+                    </button>
+                    <!-- CTA Info -->
+                    <a href="#guides" class="hidden sm:flex items-center space-x-2 text-xs bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition transform active:scale-95">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Cách Cài File IPA</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
+        <section class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-900/40 via-purple-900/20 to-transparent p-8 sm:p-12 mb-12 border border-indigo-500/10">
+            <div class="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 max-w-3xl">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 mb-6">
+                    <span class="flex h-2 w-2 relative mr-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    Cập nhật hàng ngày • No Revoke
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+                    Tải Xuống <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Ứng Dụng IPA Mod</span> & Game iOS Miễn Phí
+                </h1>
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-xl">
+                    Trải nghiệm Youtube Premium, Spotify Mod Adfree, Game hack và các trình giả lập cổ điển tốt nhất ngay trên thiết bị iOS của bạn mà không cần bẻ khóa (Jailbreak).
+                </p>
+
+                <!-- Search box -->
+                <div class="flex flex-col sm:flex-row gap-3 max-w-xl">
+                    <div class="relative flex-grow">
+                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input id="searchInput" type="text" placeholder="Tìm ứng dụng, game, tweaks..." class="w-full pl-12 pr-4 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition shadow-sm">
+                    </div>
+                    <button onclick="scrollToStore()" class="py-4 px-6 rounded-2xl bg-slate-900 dark:bg-blue-600 hover:bg-slate-800 dark:hover:bg-blue-700 text-white font-semibold transition flex items-center justify-center space-x-2 shadow-lg">
+                        <span>Khám Phá</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- APP LIBRARY SECTION -->
+        <section id="store" class="scroll-mt-24 mb-16">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold tracking-tight flex items-center space-x-3">
+                        <i class="fas fa-th-large text-blue-500"></i>
+                        <span>Thư Viện Ứng Dụng</span>
+                    </h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Chọn lọc các file IPA an toàn và chất lượng cao</p>
+                </div>
+
+                <!-- Tabs Filter -->
+                <div class="flex flex-wrap gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
+                    <button class="filter-tab px-4 py-2.5 rounded-xl text-sm font-semibold transition active-tab bg-blue-600 text-white" data-category="all">Tất Cả</button>
+                    <button class="filter-tab px-4 py-2.5 rounded-xl text-sm font-semibold transition bg-white dark:bg-apple-cardDark text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800" data-category="social">Mạng Xã Hội++</button>
+                    <button class="filter-tab px-4 py-2.5 rounded-xl text-sm font-semibold transition bg-white dark:bg-apple-cardDark text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800" data-category="games">Trò Chơi</button>
+                    <button class="filter-tab px-4 py-2.5 rounded-xl text-sm font-semibold transition bg-white dark:bg-apple-cardDark text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800" data-category="emulator">Giả Lập</button>
+                    <button class="filter-tab px-4 py-2.5 rounded-xl text-sm font-semibold transition bg-white dark:bg-apple-cardDark text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800" data-category="utility">Tiện Ích</button>
+                </div>
+            </div>
+
+            <!-- App Grid -->
+            <div id="appGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- App Card (Generated by JS) -->
+            </div>
+
+            <!-- No results -->
+            <div id="noResults" class="hidden text-center py-16">
+                <i class="far fa-frown text-5xl text-slate-400 mb-4"></i>
+                <h3 class="text-lg font-bold">Không tìm thấy ứng dụng</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Hãy thử tìm với từ khoá khác hoặc gửi yêu cầu App cho chúng tôi!</p>
+            </div>
+        </section>
+
+        <!-- SIDELOADING GUIDES -->
+        <section id="guides" class="scroll-mt-24 mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl font-extrabold tracking-tight">Hướng Dẫn Cài Đặt File IPA</h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-2">Dành cho người mới bắt đầu. Chọn phương thức phù hợp với bạn bên dưới.</p>
+            </div>
+
+            <!-- Guide Tabs Controller -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-4xl mx-auto mb-6 bg-slate-200/50 dark:bg-slate-900 p-1.5 rounded-2xl">
+                <button onclick="switchGuide('troll')" class="guide-btn py-3 rounded-xl text-sm font-semibold transition bg-white dark:bg-apple-cardDark text-slate-800 dark:text-white shadow-md" id="guide-btn-troll">
+                    <i class="fas fa-shield-alt mr-1"></i> TrollStore
+                </button>
+                <button onclick="switchGuide('alt')" class="guide-btn py-3 rounded-xl text-sm font-semibold transition text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white" id="guide-btn-alt">
+                    <i class="fas fa-desktop mr-1"></i> AltStore
+                </button>
+                <button onclick="switchGuide('scarlet')" class="guide-btn py-3 rounded-xl text-sm font-semibold transition text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white" id="guide-btn-scarlet">
+                    <i class="fas fa-bolt mr-1"></i> Scarlet
+                </button>
+                <button onclick="switchGuide('esign')" class="guide-btn py-3 rounded-xl text-sm font-semibold transition text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white" id="guide-btn-esign">
+                    <i class="fas fa-signature mr-1"></i> Esign
+                </button>
+            </div>
+
+            <!-- Guide Content Cards -->
+            <div class="max-w-4xl mx-auto bg-white dark:bg-apple-cardDark rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl">
+                <!-- TrollStore Guide -->
+                <div id="guide-troll" class="guide-content space-y-6">
+                    <div class="flex items-center space-x-3 text-emerald-500">
+                        <i class="fas fa-star-of-life text-xl"></i>
+                        <h3 class="text-xl font-bold">TrollStore (Được khuyên dùng nhất - Không bao giờ thu hồi)</h3>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                        TrollStore là một ứng dụng đột phá cho phép cài đặt vĩnh viễn các file IPA không giới hạn, không cần ký lại sau 7 ngày, nhờ tận dụng lỗ hổng CoreTrust của iOS. Chỉ hỗ trợ iOS 14.0 - 16.6.1 và một số phiên bản 17.0.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 text-xs flex items-center justify-center font-bold mt-0.5">1</span>
+                            <span class="text-sm">Truy cập trang chủ TrollStore chính thức để cài đặt TrollHelper qua trình duyệt Safari tương thích với phiên bản iOS của bạn.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 text-xs flex items-center justify-center font-bold mt-0.5">2</span>
+                            <span class="text-sm">Tải file <b>.ipa</b> từ iPAStore về ứng dụng Tệp (Files) của iPhone.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 text-xs flex items-center justify-center font-bold mt-0.5">3</span>
+                            <span class="text-sm">Nhấn vào file IPA đã tải, chọn nút <b>Chia sẻ</b> và chọn gửi sang ứng dụng <b>TrollStore</b>.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 text-xs flex items-center justify-center font-bold mt-0.5">4</span>
+                            <span class="text-sm">Nhấp vào <b>Install</b> và trải nghiệm ứng dụng vĩnh viễn không bị khoá.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AltStore Guide -->
+                <div id="guide-alt" class="guide-content space-y-6 hidden">
+                    <div class="flex items-center space-x-3 text-blue-500">
+                        <i class="fas fa-desktop text-xl"></i>
+                        <h3 class="text-xl font-bold">AltStore / Sideloadly (Cài qua Máy tính PC/Mac)</h3>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                        Phương thức chính thống cài đặt IPA sử dụng tài khoản Apple ID cá nhân của bạn để tự ký (Self-sign). Ứng dụng sẽ hoạt động ổn định trong vòng 7 ngày và yêu cầu tự động làm mới qua Wi-Fi khi cùng mạng với máy tính.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-blue-500/10 text-blue-500 text-xs flex items-center justify-center font-bold mt-0.5">1</span>
+                            <span class="text-sm">Cài đặt <b>AltServer</b> trên máy tính cá nhân (Windows hoặc macOS) và kết nối điện thoại qua dây cáp.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-blue-500/10 text-blue-500 text-xs flex items-center justify-center font-bold mt-0.5">2</span>
+                            <span class="text-sm">Nhấp vào icon AltStore trên máy tính để cài ứng dụng AltStore lên iPhone. Đăng nhập Apple ID khi có yêu cầu.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-blue-500/10 text-blue-500 text-xs flex items-center justify-center font-bold mt-0.5">3</span>
+                            <span class="text-sm">Tải trực tiếp IPA từ trang web này, mở AltStore trên điện thoại, chuyển sang tab <b>My Apps</b>, nhấn dấu <b>+</b> ở góc trái để chọn file cài đặt.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-blue-500/10 text-blue-500 text-xs flex items-center justify-center font-bold mt-0.5">4</span>
+                            <span class="text-sm">Vào <i>Cài đặt hệ thống > Cài đặt chung > Quản lý VPN & Thiết bị</i> để "Tin cậy" nhà phát triển.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scarlet Guide -->
+                <div id="guide-scarlet" class="guide-content space-y-6 hidden">
+                    <div class="flex items-center space-x-3 text-red-500">
+                        <i class="fas fa-bolt text-xl"></i>
+                        <h3 class="text-xl font-bold">Scarlet (Cài đặt trực tiếp trên điện thoại không cần PC)</h3>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                        Scarlet là công cụ ký chứng chỉ doanh nghiệp tiện dụng cho phép cài đặt trực tiếp trên thiết bị mà không cần máy tính. Điểm yếu là có thể bị thu hồi chứng chỉ bất chợt bởi Apple.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-red-500/10 text-red-500 text-xs flex items-center justify-center font-bold mt-0.5">1</span>
+                            <span class="text-sm">Dùng trình duyệt Safari trên iPhone truy cập vào trang chủ <b>usescarlet.com</b> và chọn <b>Direct Install</b>.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-red-500/10 text-red-500 text-xs flex items-center justify-center font-bold mt-0.5">2</span>
+                            <span class="text-sm">Sau khi cài đặt xong Scarlet, hãy cấp quyền tại <i>Cài đặt > Cài đặt chung > Quản lý thiết bị</i>.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-red-500/10 text-red-500 text-xs flex items-center justify-center font-bold mt-0.5">3</span>
+                            <span class="text-sm">Mở ứng dụng Scarlet, nhấn vào biểu tượng <b>Tải xuống</b> ở thanh menu dưới cùng, chọn file IPA đã tải về từ iPAStore để bắt đầu cài đặt tự động.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Esign Guide -->
+                <div id="guide-esign" class="guide-content space-y-6 hidden">
+                    <div class="flex items-center space-x-3 text-purple-500">
+                        <i class="fas fa-signature text-xl"></i>
+                        <h3 class="text-xl font-bold">Esign (Ký chứng chỉ doanh nghiệp tùy biến)</h3>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                        Một trong những công cụ ký app mạnh mẽ hàng đầu cho iOS. Esign cho phép nhập các loại chứng chỉ nhà phát triển (P12) ngoài để ký ứng dụng an toàn hơn, không giới hạn số lượng cài đặt.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-purple-500/10 text-purple-500 text-xs flex items-center justify-center font-bold mt-0.5">1</span>
+                            <span class="text-sm">Cài đặt Esign bằng phương thức cài đặt trực tiếp qua link chứng chỉ hoặc AltStore.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-purple-500/10 text-purple-500 text-xs flex items-center justify-center font-bold mt-0.5">2</span>
+                            <span class="text-sm">Nhập chứng chỉ doanh nghiệp đang hoạt động (File .p12 và file .mobileprovision) vào Esign.</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="w-6 h-6 rounded-full bg-purple-500/10 text-purple-500 text-xs flex items-center justify-center font-bold mt-0.5">3</span>
+                            <span class="text-sm">Tải file IPA từ iPAStore, nhập vào danh sách file của Esign, bấm chọn file và ấn <b>Signature (Ký tên)</b> sau đó chọn <b>Install</b>.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBMIT APP SECTION -->
+        <section id="submit" class="scroll-mt-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white dark:bg-apple-cardDark rounded-3xl p-8 sm:p-12 border border-slate-200 dark:border-slate-800 shadow-xl items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold tracking-tight mb-4">Bạn Không Tìm Thấy App Ưa Thích?</h2>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                        Đừng lo lắng! Hãy gửi yêu cầu cho chúng tôi. Đội ngũ kiểm duyệt iPAStore sẽ tìm kiếm bản Mod / Tweak an toàn nhất, ký mã sạch và đăng tải lên trong thời gian sớm nhất có thể.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3 text-sm text-slate-600 dark:text-slate-400">
+                            <i class="fas fa-check-circle text-emerald-500 text-lg"></i>
+                            <span>Dịch vụ tìm kiếm hoàn toàn miễn phí</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-sm text-slate-600 dark:text-slate-400">
+                            <i class="fas fa-check-circle text-emerald-500 text-lg"></i>
+                            <span>Kiểm tra mã độc và đảm bảo chất lượng file IPA</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-sm text-slate-600 dark:text-slate-400">
+                            <i class="fas fa-check-circle text-emerald-500 text-lg"></i>
+                            <span>Hỗ trợ cập nhật bản mới liên tục khi có yêu cầu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800">
+                    <form id="requestForm" onsubmit="handleRequestSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Tên ứng dụng / Trò chơi</label>
+                            <input type="text" required id="reqAppName" placeholder="Ví dụ: Minecraft PE, Spotify Premium..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Yêu cầu mod cụ thể (Nếu có)</label>
+                            <textarea id="reqModDetail" rows="3" placeholder="Ví dụ: Mod vô hạn tiền, tắt quảng cáo, tải nhạc offline..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition text-sm"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Địa chỉ Email nhận thông báo</label>
+                            <input type="email" required id="reqEmail" placeholder="emailcuaban@gmail.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition text-sm">
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold transition flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/10">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Gửi Yêu Cầu Cho Đội Ngũ</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- APP DETAIL MODAL -->
+    <div id="appModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden transition-opacity duration-300 opacity-0">
+        <div class="relative w-full max-w-2xl bg-white dark:bg-apple-cardDark rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 transform scale-95 transition-transform duration-300">
+            <!-- Modal Header / Background banner -->
+            <div class="h-32 bg-gradient-to-r from-blue-600 to-indigo-700 relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="p-6 sm:p-8 relative pt-0 -mt-10">
+                <!-- App Meta -->
+                <div class="flex items-end space-x-4 mb-6">
+                    <div id="modalAppIcon" class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white p-1 shadow-lg flex items-center justify-center z-10 border border-slate-200 dark:border-slate-800">
+                        <!-- SVGs or dynamic contents -->
+                    </div>
+                    <div class="flex-grow pb-1">
+                        <h3 id="modalAppName" class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white leading-tight">Spotify Plus Premium</h3>
+                        <p id="modalAppCategory" class="text-sm text-blue-500 font-semibold uppercase mt-1">Mạng xã hội++</p>
+                    </div>
+                </div>
+
+                <!-- Info Row Info -->
+                <div class="grid grid-cols-3 gap-3 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800/80 text-center mb-6">
+                    <div>
+                        <span class="block text-[10px] uppercase font-bold text-slate-400">Phiên bản</span>
+                        <span id="modalAppVersion" class="text-sm font-semibold mt-0.5">8.9.4</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase font-bold text-slate-400">Kích thước</span>
+                        <span id="modalAppSize" class="text-sm font-semibold mt-0.5">65.4 MB</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase font-bold text-slate-400">Cập nhật</span>
+                        <span id="modalAppUpdated" class="text-sm font-semibold mt-0.5">1 ngày trước</span>
+                    </div>
+                </div>
+
+                <!-- App Features / Description -->
+                <div class="mb-6">
+                    <h4 class="text-xs uppercase font-extrabold tracking-wider text-slate-400 mb-2">Tính Năng Mod (Tweak)</h4>
+                    <div id="modalAppFeatures" class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                        <!-- App features injection -->
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h4 class="text-xs uppercase font-extrabold tracking-wider text-slate-400 mb-2">Mô tả chi tiết</h4>
+                    <p id="modalAppDescription" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Ứng dụng nghe nhạc tốt nhất toàn cầu với phiên bản đã chỉnh sửa giúp loại bỏ các hạn chế quảng cáo phiền toái.
+                    </p>
+                </div>
+
+                <!-- Download Actions Area -->
+                <div id="downloadArea">
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <button onclick="startDownloadSimulator()" class="flex-grow py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm transition flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/20">
+                            <i class="fas fa-download"></i>
+                            <span>Tải xuống file .IPA</span>
+                        </button>
+                        <button onclick="copyIPULink()" class="py-4 px-6 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-sm transition flex items-center justify-center space-x-2">
+                            <i class="fas fa-link"></i>
+                            <span>Sao Chép Link IPA</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Downloader simulation status -->
+                <div id="downloadProgressArea" class="hidden space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                    <div class="flex justify-between items-center text-sm font-semibold">
+                        <span id="progressText" class="text-blue-500 flex items-center">
+                            <i class="fas fa-spinner animate-spin mr-2"></i> Đang chuẩn bị đường truyền...
+                        </span>
+                        <span id="progressPercent" class="text-slate-500">0%</span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-800 h-3 rounded-full overflow-hidden">
+                        <div id="progressBar" class="bg-blue-600 h-full w-0 transition-all duration-300 ease-out rounded-full"></div>
+                    </div>
+                    <p class="text-[11px] text-slate-400 italic">Lưu ý: Không đóng bảng này trong lúc tải tệp để giữ kết nối ổn định.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Dialog (Custom Notification) -->
+    <div id="customAlert" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 max-w-sm w-full bg-white dark:bg-apple-cardDark rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 p-4 flex items-start space-x-3">
+        <div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-check"></i>
+        </div>
+        <div class="flex-grow">
+            <h4 class="font-bold text-sm" id="alertTitle">Thông Báo</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1" id="alertMessage">Nội dung thông báo ở đây.</p>
+        </div>
+        <button onclick="hideAlert()" class="text-slate-400 hover:text-slate-600 transition">
+            <i class="fas fa-times text-xs"></i>
+        </button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white dark:bg-apple-cardDark border-t border-slate-200 dark:border-slate-800/80 py-12 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center justify-center sm:justify-start space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white">
+                            <i class="fab fa-apple text-sm"></i>
+                        </div>
+                        <span class="text-lg font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600">iPAStore</span>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed max-w-md mx-auto sm:mx-0">
+                        iPAStore là kho tải ứng dụng .IPA không chính thức cho iOS. Toàn bộ file đều được đóng gói lại, loại bỏ quảng cáo và mở khoá tính năng cao cấp cho người yêu công nghệ. Chúng tôi không thu thập bất cứ dữ liệu riêng tư nào.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Danh Mục</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#store" onclick="filterCategory('social')" class="hover:text-blue-500 transition text-slate-500 dark:text-slate-400">Ứng dụng ++</a></li>
+                        <li><a href="#store" onclick="filterCategory('games')" class="hover:text-blue-500 transition text-slate-500 dark:text-slate-400">Trò chơi Hack</a></li>
+                        <li><a href="#store" onclick="filterCategory('emulator')" class="hover:text-blue-500 transition text-slate-500 dark:text-slate-400">Trình giả lập</a></li>
+                        <li><a href="#store" onclick="filterCategory('utility')" class="hover:text-blue-500 transition text-slate-500 dark:text-slate-400">Công cụ hệ thống</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4 font-semibold">Liên Hệ</h4>
+                    <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                        <li>Email: ipastore.ios@support.com</li>
+                        <li>Nhóm hỗ trợ: t.me/iPAStoreVN</li>
+                        <li>Twitter: @iPAStoreOff</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <span>© 2026 iPAStore Dev. Bản quyền thuộc về cộng đồng iOS Sideload Việt Nam.</span>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-blue-500 transition">Điều khoản sử dụng</a>
+                    <a href="#" class="hover:text-blue-500 transition">Chính sách bảo mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // App Store Dataset
+        const APPS_DB = [
+            {
+                id: 'spotify_plus',
+                name: 'Spotify++ (Mod Premium)',
+                category: 'social',
+                categoryName: 'Mạng xã hội++',
+                version: '8.9.12',
+                size: '64.2 MB',
+                updated: '1 ngày trước',
+                icon: `<svg viewBox="0 0 24 24" class="w-full h-full fill-[#1ED760]"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.563.387-.857.207-2.377-1.454-5.37-1.783-8.893-.98-.336.075-.668-.135-.744-.47-.077-.337.135-.669.47-.745 3.856-.88 7.15-.502 9.81 1.13.295.178.387.563.207.858zm1.223-2.72c-.226.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.082-1.182-.413.125-.847-.107-.972-.52-.125-.413.107-.847.52-.972 3.673-1.114 8.243-.57 11.348 1.34.368.226.488.707.26 1.074zm.106-2.833C14.385 8.8 8.5 8.61 5.105 9.64c-.52.158-1.07-.143-1.228-.662-.158-.52.143-1.07.662-1.228 3.9-1.185 10.4-1.01 14.4 1.37.47.28.62.89.34 1.36-.28.47-.89.62-1.36.34z"/></svg>`,
+                desc: 'Phiên bản cải tiến đặc biệt của Spotify dành cho iOS, mang lại trải nghiệm nghe nhạc chất lượng cao đỉnh cao mà không có bất kỳ quảng cáo gián đoạn nào.',
+                features: [
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Không có quảng cáo âm thanh và hình ảnh',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Tự do chuyển bài hát (Unlimited Skips)',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Cho phép phát nhạc theo yêu cầu bất cứ lúc nào',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Tùy chọn chất lượng âm thanh "Very High"'
+                ],
+                downloadUrl: 'https://github.com/ipastore/releases/spotify_8.9.12.ipa'
+            },
+            {
+                id: 'uyouplus',
+                name: 'YouTube uYouPlus',
+                category: 'social',
+                categoryName: 'Mạng xã hội++',
+                version: '19.08.2',
+                size: '124 MB',
+                updated: '2 ngày trước',
+                icon: `<svg viewBox="0 0 24 24" class="w-full h-full fill-[#FF0000]"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`,
+                desc: 'Bản YouTube tuỳ biến hoàn hảo, tổng hợp tất cả các tweak tốt nhất cho iOS bao gồm chặn quảng cáo hoàn toàn, phát trong nền và Picture in Picture (PiP).',
+                features: [
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Chặn hoàn toàn quảng cáo video và banner',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Phát nền khi khoá màn hình (Background Play)',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Tích hợp tính năng tải video trực tiếp 1080p/4K',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Tích hợp SponsorBlock để tự động bỏ qua đoạn quảng cáo'
+                ],
+                downloadUrl: 'https://github.com/ipastore/releases/uyouplus_19.08.2.ipa'
+            },
+            {
+                id: 'delta_emulator',
+                name: 'Delta Emulator',
+                category: 'emulator',
+                categoryName: 'Trình giả lập',
+                version: '1.5.2',
+                size: '48.9 MB',
+                updated: '1 tuần trước',
+                icon: `<div class="w-full h-full rounded-2xl bg-gradient-to-br from-red-500 to-amber-500 flex items-center justify-center text-white text-3xl font-black">Δ</div>`,
+                desc: 'Trình giả lập trò chơi cổ điển "tất cả trong một" vô cùng nổi tiếng dành cho iOS. Hỗ trợ mô phỏng hàng ngàn trò chơi trên NES, SNES, GBA, NDS và N64.',
+                features: [
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Trải nghiệm các game huyền thoại NES, GameBoy, NDS, N64',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Hỗ trợ kết nối tay cầm không dây Xbox, PS4/PS5, Switch',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Tính năng lưu và tải trạng thái game nhanh (Save States)',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Đồng bộ đám mây dữ liệu chơi game lên Google Drive/Dropbox'
+                ],
+                downloadUrl: 'https://github.com/ipastore/releases/delta_1.5.2.ipa'
+            },
+            {
+                id: 'minecraft_pe',
+                name: 'Minecraft Pocket Edition',
+                category: 'games',
+                categoryName: 'Trò chơi',
+                version: '1.20.70',
+                size: '342 MB',
+                updated: '3 ngày trước',
+                icon: `<div class="w-full h-full rounded-2xl bg-gradient-to-br from-emerald-700 to-yellow-800 flex items-center justify-center text-white text-2xl font-bold border-2 border-slate-700"><i class="fas fa-cubes"></i></div>`,
+                desc: 'Tựa game sinh tồn sáng tạo hình hộp cát nổi tiếng toàn cầu. Bản IPA mở khoá miễn phí, tương thích mượt mà với các dòng iPhone thế hệ mới.',
+                features: [
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Chơi miễn phí hoàn toàn không mất phí mua game',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Hỗ trợ kết nối Multiplayer thế giới mở',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Mượt mà, hiệu năng tối ưu cao, hỗ trợ 120 FPS trên iPad Pro'
+                ],
+                downloadUrl: 'https://github.com/ipastore/releases/minecraft_pe_1.20.70.ipa'
+            },
+            {
+                id: 'ppsspp',
+                name: 'PPSSPP (PSP Emulator)',
+                category: 'emulator',
+                categoryName: 'Trình giả lập',
+                version: '1.17.1',
+                size: '34.6 MB',
+                updated: '2 tuần trước',
+                icon: `<div class="w-full h-full rounded-2xl bg-gradient-to-br from-indigo-700 to-blue-900 flex items-center justify-center text-white text-2xl font-black">PP</div>`,
+                desc: 'Trình giả lập chơi game Sony PSP tốt nhất trên thế giới. Giúp bạn trải nghiệm các bom tấn di động đình đám như God of War, GTA hay Dragon Ball với độ phân giải siêu nét gấp nhiều lần gốc.',
+                features: [
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Tốc độ mô phỏng cực nhanh, không lo lag giật',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Nâng cấp độ phân giải đồ họa HD 2K, 4K sắc nét',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Hỗ trợ chỉnh sửa bản đồ phím ảo thuận tay',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Nhập cheats code dễ dàng'
+                ],
+                downloadUrl: 'https://github.com/ipastore/releases/ppsspp_1.17.1.ipa'
+            },
+            {
+                id: 'trollstore_installer',
+                name: 'TrollStore Helper App',
+                category: 'utility',
+                categoryName: 'Tiện ích',
+                version: '2.0.12',
+                size: '12.8 MB',
+                updated: '5 ngày trước',
+                icon: `<div class="w-full h-full rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white text-3xl font-black"><i class="fas fa-mask"></i></div>`,
+                desc: 'Bộ cài đặt chính thức hỗ trợ cấu hình và cài đặt TrollStore cho các thiết bị chạy iOS thích hợp. Công cụ hỗ trợ đắc lực cho Sideload không bị Apple thu hồi chứng chỉ.',
+                features: [
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Hỗ trợ cài đặt TrollStore vĩnh viễn',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Công cụ nhỏ gọn, dễ thao tác',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Tải trực tiếp không thông qua PC'
+                ],
+                downloadUrl: 'https://github.com/ipastore/releases/trollstore_2.0.12.ipa'
+            },
+            {
+                id: 'facebook_wolf',
+                name: 'Facebook Wolf Tweak',
+                category: 'social',
+                categoryName: 'Mạng xã hội++',
+                version: '445.0.0',
+                size: '110 MB',
+                updated: '4 ngày trước',
+                icon: `<svg viewBox="0 0 24 24" class="w-full h-full fill-[#1877F2]"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>`,
+                desc: 'Bản sửa đổi tốt nhất của Facebook mang lại khả năng kiểm soát dữ liệu hiển thị tốt nhất, loại bỏ hoàn toàn quảng cáo tài trợ khó chịu trên dòng thời gian.',
+                features: [
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Ẩn các bài viết tài trợ quảng cáo (Ad block)',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Nút tải ảnh và video Reels chất lượng gốc',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Tùy chọn khoá bảo mật vân tay / FaceID ứng dụng',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Xem tin nhắn người khác không hiển thị Đã xem'
+                ],
+                downloadUrl: 'https://github.com/ipastore/releases/facebook_wolf.ipa'
+            },
+            {
+                id: 'gta_sa',
+                name: 'GTA San Andreas Remastered',
+                category: 'games',
+                categoryName: 'Trò chơi',
+                version: '2.10',
+                size: '2.4 GB',
+                updated: '1 tháng trước',
+                icon: `<div class="w-full h-full rounded-2xl bg-slate-900 flex items-center justify-center text-white text-3xl font-extrabold border-2 border-slate-700">GTA</div>`,
+                desc: 'Phiên bản cải tiến đồ họa và tối ưu hoá của tựa game phiêu lưu thế giới mở kinh điển nhất mọi thời đại. Hỗ trợ mượt mà trên toàn bộ màn hình tai thỏ, đảo động (Dynamic Island) của iPhone mới.',
+                features: [
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Đồ họa remastered cải thiện rõ rệt so với bản cũ',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Tương thích hoàn hảo tay cầm DualSense & Xbox',
+                    '<i class="fas fa-check text-emerald-500 mr-2"></i> Tích hợp công cụ chỉnh sửa menu mã gian lận (Cheat Menu)'
+                ],
+                downloadUrl: 'https://github.com/ipastore/releases/gta_sa_2.10.ipa'
+            }
+        ];
+
+        // Global variables for states
+        let selectedApp = null;
+        let isDarkMode = true;
+
+        // On Load Initializer
+        window.onload = function() {
+            initTheme();
+            renderAppGrid(APPS_DB);
+            setupEventListeners();
+        };
+
+        // Dark/Light Theme Handler
+        function initTheme() {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme === 'light') {
+                isDarkMode = false;
+                document.documentElement.classList.remove('dark');
+                document.getElementById('themeIcon').className = 'fas fa-sun text-lg text-amber-500';
+            } else {
+                isDarkMode = true;
+                document.documentElement.classList.add('dark');
+                document.getElementById('themeIcon').className = 'fas fa-moon text-lg text-indigo-400';
+            }
+        }
+
+        function toggleTheme() {
+            if (isDarkMode) {
+                isDarkMode = false;
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                document.getElementById('themeIcon').className = 'fas fa-sun text-lg text-amber-500';
+            } else {
+                isDarkMode = true;
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                document.getElementById('themeIcon').className = 'fas fa-moon text-lg text-indigo-400';
+            }
+        }
+
+        // Setup DOM Listeners
+        function setupEventListeners() {
+            // Theme toggle button
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+            // Search input filter
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function(e) {
+                const keyword = e.target.value.toLowerCase().trim();
+                const activeCategory = document.querySelector('.filter-tab.active-tab').getAttribute('data-category');
+                filterAndSearchApps(keyword, activeCategory);
+            });
+
+            // Category filter tabs click
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => {
+                        t.className = "filter-tab px-4 py-2.5 rounded-xl text-sm font-semibold transition bg-white dark:bg-apple-cardDark text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800";
+                    });
+                    this.className = "filter-tab px-4 py-2.5 rounded-xl text-sm font-semibold transition active-tab bg-blue-600 text-white";
+                    
+                    const category = this.getAttribute('data-category');
+                    const keyword = document.getElementById('searchInput').value.toLowerCase().trim();
+                    filterAndSearchApps(keyword, category);
+                });
+            });
+
+            // Modal click outside to close
+            const modal = document.getElementById('appModal');
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        // Render Apps to Grid
+        function renderAppGrid(apps) {
+            const appGrid = document.getElementById('appGrid');
+            const noResults = document.getElementById('noResults');
+            appGrid.innerHTML = '';
+
+            if (apps.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            apps.forEach(app => {
+                const card = document.createElement('div');
+                card.className = "bg-white dark:bg-apple-cardDark rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800/80 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl cursor-pointer flex flex-col justify-between";
+                card.setAttribute('onclick', `openAppDetail('${app.id}')`);
+
+                card.innerHTML = `
+                    <div>
+                        <!-- Top details -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-900 flex-shrink-0 flex items-center justify-center p-0.5">
+                                ${app.icon}
+                            </div>
+                            <div class="flex-grow min-w-0">
+                                <span class="text-[10px] uppercase font-extrabold tracking-wider text-blue-500">${app.categoryName}</span>
+                                <h3 class="font-bold text-sm sm:text-base truncate mt-0.5 text-slate-900 dark:text-white">${app.name}</h3>
+                                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 font-medium">Bản: ${app.version} • ${app.size}</p>
+                            </div>
+                        </div>
+                        <!-- Brief description -->
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-4 line-clamp-2 leading-relaxed">
+                            ${app.desc}
+                        </p>
+                    </div>
+                    <!-- Action Bottom -->
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+                        <span class="text-[11px] font-semibold text-emerald-500 flex items-center">
+                            <i class="fas fa-check-circle mr-1"></i> Đã test OK
+                        </span>
+                        <span class="text-xs font-bold text-blue-500 hover:text-blue-600 flex items-center space-x-1">
+                            <span>Chi Tiết</span>
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                        </span>
+                    </div>
+                `;
+                appGrid.appendChild(card);
+            });
+        }
+
+        // Filter and Search Engine combined
+        function filterAndSearchApps(keyword, category) {
+            let filtered = APPS_DB;
+            
+            // Apply category filter
+            if (category !== 'all') {
+                filtered = filtered.filter(app => app.category === category);
+            }
+
+            // Apply search keyword filter
+            if (keyword) {
+                filtered = filtered.filter(app => 
+                    app.name.toLowerCase().includes(keyword) || 
+                    app.desc.toLowerCase().includes(keyword)
+                );
+            }
+
+            renderAppGrid(filtered);
+        }
+
+        // Direct Category Link action (from footer/guide links)
+        function filterCategory(categoryName) {
+            const tab = document.querySelector(`.filter-tab[data-category="${categoryName}"]`);
+            if (tab) {
+                tab.click();
+            }
+        }
+
+        // Scroll to Store container smoothly
+        function scrollToStore() {
+            document.getElementById('store').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Switch Sideload Guide Tabs
+        function switchGuide(guideId) {
+            // Hide all guides
+            const contents = document.querySelectorAll('.guide-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            // Deactivate all buttons
+            const buttons = document.querySelectorAll('.guide-btn');
+            buttons.forEach(btn => {
+                btn.className = "guide-btn py-3 rounded-xl text-sm font-semibold transition text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white";
+            });
+
+            // Show and Activate requested guide
+            document.getElementById(`guide-${guideId}`).classList.remove('hidden');
+            const targetBtn = document.getElementById(`guide-btn-${guideId}`);
+            
+            if (guideId === 'troll') targetBtn.className = "guide-btn py-3 rounded-xl text-sm font-semibold transition bg-white dark:bg-apple-cardDark text-emerald-500 shadow-md";
+            if (guideId === 'alt') targetBtn.className = "guide-btn py-3 rounded-xl text-sm font-semibold transition bg-white dark:bg-apple-cardDark text-blue-500 shadow-md";
+            if (guideId === 'scarlet') targetBtn.className = "guide-btn py-3 rounded-xl text-sm font-semibold transition bg-white dark:bg-apple-cardDark text-red-500 shadow-md";
+            if (guideId === 'esign') targetBtn.className = "guide-btn py-3 rounded-xl text-sm font-semibold transition bg-white dark:bg-apple-cardDark text-purple-500 shadow-md";
+        }
+
+        // Detail Modal Controller
+        function openAppDetail(appId) {
+            selectedApp = APPS_DB.find(app => app.id === appId);
+            if (!selectedApp) return;
+
+            // Inject app details
+            document.getElementById('modalAppName').innerText = selectedApp.name;
+            document.getElementById('modalAppCategory').innerText = selectedApp.categoryName;
+            document.getElementById('modalAppVersion').innerText = selectedApp.version;
+            document.getElementById('modalAppSize').innerText = selectedApp.size;
+            document.getElementById('modalAppUpdated').innerText = selectedApp.updated;
+            document.getElementById('modalAppDescription').innerText = selectedApp.desc;
+            document.getElementById('modalAppIcon').innerHTML = selectedApp.icon;
+
+            // Features renderer
+            const featuresDiv = document.getElementById('modalAppFeatures');
+            featuresDiv.innerHTML = '';
+            selectedApp.features.forEach(f => {
+                const item = document.createElement('p');
+                item.className = "flex items-center text-xs sm:text-sm";
+                item.innerHTML = f;
+                featuresDiv.appendChild(item);
+            });
+
+            // Reset download simulator interface
+            document.getElementById('downloadArea').classList.remove('hidden');
+            document.getElementById('downloadProgressArea').classList.add('hidden');
+            document.getElementById('progressBar').style.width = '0%';
+            document.getElementById('progressPercent').innerText = '0%';
+
+            // Show Modal with fading effect
+            const modal = document.getElementById('appModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('.transform').classList.remove('scale-95');
+            }, 50);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('appModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('.transform').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Download Simulator Logic
+        function startDownloadSimulator() {
+            if (!selectedApp) return;
+
+            // Hide normal download buttons
+            document.getElementById('downloadArea').classList.add('hidden');
+            
+            // Show dynamic download area
+            const progressArea = document.getElementById('downloadProgressArea');
+            progressArea.classList.remove('hidden');
+
+            const progressBar = document.getElementById('progressBar');
+            const progressPercent = document.getElementById('progressPercent');
+            const progressText = document.getElementById('progressText');
+
+            let progress = 0;
+            progressText.innerHTML = `<i class="fas fa-spinner animate-spin mr-2"></i> Đang yêu cầu máy chủ bảo mật...`;
+
+            const interval = setInterval(() => {
+                if (progress < 15) {
+                    progress += 1;
+                } else if (progress < 50) {
+                    progressText.innerHTML = `<i class="fas fa-spinner animate-spin mr-2"></i> Kết nối đường truyền tải tệp tin .IPA...`;
+                    progress += Math.floor(Math.random() * 5) + 1;
+                } else if (progress < 90) {
+                    progressText.innerHTML = `<i class="fas fa-spinner animate-spin mr-2"></i> Đang nén chứng chỉ số độc lập...`;
+                    progress += Math.floor(Math.random() * 8) + 1;
+                } else if (progress < 100) {
+                    progressText.innerHTML = `<i class="fas fa-spinner animate-spin mr-2"></i> Hoàn thành những bước cuối cùng...`;
+                    progress += 1;
+                }
+
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    // Final State
+                    progressText.innerHTML = `<i class="fas fa-check-circle text-emerald-500 mr-2"></i> Tải Xuống Thành Công!`;
+                    progressPercent.innerText = '100%';
+                    progressBar.className = "bg-emerald-500 h-full w-full transition-all duration-300 rounded-full";
+
+                    // Trigger direct download simulation
+                    setTimeout(() => {
+                        closeModal();
+                        showAlert('Tải Xuống Thành Công', `File IPA của ${selectedApp.name} đang được tải xuống thiết bị của bạn. Hãy kiểm tra mục Tải về (Safari Downloads)!`);
+                    }, 800);
+                }
+
+                progressBar.style.width = `${progress}%`;
+                progressPercent.innerText = `${progress}%`;
+            }, 100);
+        }
+
+        // Copy direct simulator url link
+        function copyIPULink() {
+            if (!selectedApp) return;
+            const fakeUrl = selectedApp.downloadUrl;
+            
+            // Create helper input for clipboard
+            const el = document.createElement('textarea');
+            el.value = fakeUrl;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            showAlert('Đã Sao Chép!', `Liên kết tải trực tiếp IPA cho ${selectedApp.name} đã được lưu vào khay nhớ tạm.`);
+        }
+
+        // Custom Notification Alert Handler
+        function showAlert(title, msg) {
+            const alertBox = document.getElementById('customAlert');
+            document.getElementById('alertTitle').innerText = title;
+            document.getElementById('alertMessage').innerText = msg;
+
+            alertBox.classList.remove('translate-y-20', 'opacity-0');
+            
+            // Auto disappear after 5 seconds
+            setTimeout(() => {
+                hideAlert();
+            }, 5000);
+        }
+
+        function hideAlert() {
+            const alertBox = document.getElementById('customAlert');
+            alertBox.classList.add('translate-y-20', 'opacity-0');
+        }
+
+        // Form Submit Handler
+        function handleRequestSubmit(event) {
+            event.preventDefault();
+            const appName = document.getElementById('reqAppName').value;
+            const email = document.getElementById('reqEmail').value;
+
+            // Reset Form Values
+            document.getElementById('requestForm').reset();
+
+            // Notify User safely
+            showAlert('Gửi Yêu Cầu Thành Công!', `Chúng tôi đã tiếp nhận yêu cầu thêm app: "${appName}". Bạn sẽ nhận được email hướng dẫn khi app được đăng lên.`);
+        }
+      </script>
+  </body>
+</html>
