@@ -1,75 +1,77 @@
 <!DOCTYPE html>
 <html lang="vi" class="dark">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPAStore - Kho Ứng Dụng IOS IPA Miễn Phí</title>
+    <title>iPAStore - Kho Ứng Dụng iOS IPA Miễn Phí</title>
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwind.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            color: {
-              apple: {
-                blue: '#0071e3',
-                gray: '#1d1d1f',
-                lightGray: '#f5f5f7',
-                darkBg: '#090a0f',
-                cardDark: '#161824'
-              }
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        apple: {
+                            blue: '#0071e3',
+                            gray: '#1d1d1f',
+                            lightGray: '#f5f5f7',
+                            darkBg: '#090a0f',
+                            cardDark: '#161824'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
             }
-          }
         }
-      }
     </script>
     <!-- Google Fonts (Inter) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.con/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        scroll-behavior: smooth;
-      }
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #161824;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #374151;
-        border-radius: 9999px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #4B5563;
-      }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #161824;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4B5563;
+        }
     </style>
-  </head>
-  <body class="bg-apple-lightGray dark:bg-apple-darkBg text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300">
+</head>
+<body class="bg-apple-lightGray dark:bg-apple-darkBg text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300">
 
     <!-- HEADER & NAVBAR -->
     <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-apple-darkBg/80 border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
-        <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center shadow-blue-500/20">
-          <i class="fab fa-apple text-white text-xl"></i>
-        </div>
-        <div>
-            <span class="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 tracking-tight">iPAStore</span>
-          <span class="hidden sm:inline-block ml-1 text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 font-medium">v2.5.0</span>
-        </div>
-      </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <i class="fab fa-apple text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 tracking-tight">iPAStore</span>
+                        <span class="hidden sm:inline-block ml-1 text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 font-medium">v2.5.0</span>
+                    </div>
+                </div>
 
-    <!-- Navigation Desktop -->
-     <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold">
                     <a href="#store" class="text-apple-blue hover:text-blue-600 transition">Kho Ứng Dụng</a>
                     <a href="#guides" class="hover:text-apple-blue dark:hover:text-blue-400 transition">Hướng Dẫn Cài</a>
                     <a href="#submit" class="hover:text-apple-blue dark:hover:text-blue-400 transition">Yêu Cầu App</a>
@@ -961,6 +963,7 @@
             // Notify User safely
             showAlert('Gửi Yêu Cầu Thành Công!', `Chúng tôi đã tiếp nhận yêu cầu thêm app: "${appName}". Bạn sẽ nhận được email hướng dẫn khi app được đăng lên.`);
         }
-      </script>
-  </body>
+    </script>
+</body>
 </html>
+
